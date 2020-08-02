@@ -12,7 +12,7 @@
 # Supported Instructions
 
 ### _notify_
-`room & whisper` `everyone`
+`room & whisper` `masterOnly`
 
 设置提醒。
 私聊发送的指令，将会在私聊窗口提醒，而群组内发送的指令在群组内 @ 发送者提醒。
@@ -22,10 +22,17 @@
 notify -d 30 hey，你该喝水了！
 
 # 到 10：30 提醒我参加会议
-notify -t 10:30 该去开会了！
+notify -t "2020-08-03 09:30" 该去开会了！
 
-# 每周一和周五9：00提醒我登录工时日志
-notify -t 9:00 -w 1,5 该登记工时了
+# 每周五16：00 提醒写周报
+notify -c "0 0 16 ? * FRI" 周报周报
+
+# 列出当前有效的提醒
+notify -l
+
+# 删除 id 为 a35be3 的提醒
+notify -r a35be3
+
 ```
 
 
